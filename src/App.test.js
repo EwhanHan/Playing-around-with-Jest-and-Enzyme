@@ -10,3 +10,9 @@ test('render non-empty component without crashing', () => {
   // throw new Error('FAIL TEST') //will fail test
   expect(wrapper.exists()).toBe(true)
 });
+
+test('find attribute', ()=>{
+  const wrapper = shallow(<App/>)
+  const something = wrapper.find("[data-test='component-app']")
+  expect(something.length).toBe(1)
+})
